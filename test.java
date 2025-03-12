@@ -24,7 +24,7 @@ public class TransactionExplorerTest {
     @Test
     public void testTransactionSectionHeading() {
         try {
-            WebElement transactionHeading = driver.findElement(By.xpath("//h2[contains(text(), 'Transactions')]"));
+            WebElement transactionHeading = driver.findElement(By.xpath("//div[@class='transactions']/h3"));
             String expectedText = "25 of 2875 Transactions";
             Assert.assertTrue(transactionHeading.getText().contains(expectedText), "Transaction heading validation failed!");
             System.out.println("Test Case 1 Passed: Transaction heading is correct.");
