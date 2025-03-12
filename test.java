@@ -27,9 +27,9 @@ public class TransactionExplorerTest {
             WebElement transactionHeading = driver.findElement(By.xpath("//h2[contains(text(), 'Transactions')]"));
             String expectedText = "25 of 2875 Transactions";
             Assert.assertTrue(transactionHeading.getText().contains(expectedText), "Transaction heading validation failed!");
-            System.out.println("✅ Test Case 1 Passed: Transaction heading is correct.");
+            System.out.println("Test Case 1 Passed: Transaction heading is correct.");
         } catch (NoSuchElementException e) {
-            System.err.println("❌ Test Case 1 Failed: Transaction section not found!");
+            System.err.println("Test Case 1 Failed: Transaction section not found!");
         }
     }
 
@@ -47,11 +47,11 @@ public class TransactionExplorerTest {
                 List<WebElement> outputs = tx.findElements(By.xpath(".//div[contains(@class, 'vout-header')]//a"));
 
                 if (inputs.size() == 1 && outputs.size() == 2) {
-                    System.out.println("✅ Transaction Hash (1 input, 2 outputs): " + txHash);
+                    System.out.println(" Transaction Hash (1 input, 2 outputs): " + txHash);
                 }
             }
         } catch (NoSuchElementException e) {
-            System.err.println("❌ Test Case 2 Failed: Could not locate transaction elements!");
+            System.err.println("Test Case 2 Failed: Could not locate transaction elements!");
         }
     }
 
